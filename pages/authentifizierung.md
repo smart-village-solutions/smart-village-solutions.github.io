@@ -5,9 +5,9 @@ Die Smart Village App Mainserver GraphQL API verwendet **OAuth2** zur Authentifi
 ## Schritte zur Authentifizierung
 
 1.  **API-Key und API-Secret erhalten**
-    Um Zugang zur API zu erhalten, müssen Sie Ihre Anwendung registrieren. Nach der Registrierung erhalten Sie einen **API-Key** und ein **API-Secret**, die zur Generierung eines Tokens benötigt werden.
+    Um Zugang zur API zu erhalten, muss durch den Server-Admin ein entsprechender Account erstellt werden. Bei der Erstellung werden auch automatisch ein **API-Key** und ein **API-Secret** erzeugt, die zur Generierung eines Tokens benötigt werden.
 2.  **Token anfordern**
-    Verwenden Sie den **API-Key** und das **API-Secret**, um einen Bearer Token über den OAuth2-Token-Endpunkt anzufordern. Typischerweise erfolgt dies über einen `POST`\-Request an den Token-Endpunkt:
+    Verwenden Sie den **API-Key** und das **API-Secret**, um einen Bearer Token über den OAuth2-Token-Endpunkt anzufordern. Dies erfolgt über einen `POST`\-Request an den Token-Endpunkt:
 
     ```
     POST /oauth/token
@@ -38,7 +38,7 @@ Die Smart Village App Mainserver GraphQL API verwendet **OAuth2** zur Authentifi
 
 ## Token-Gültigkeit und Erneuerung
 
-*   Der Bearer Token hat eine begrenzte Gültigkeit, die in der Antwort des Token-Endpunkts (`expires_in`) angegeben ist. Sobald der Token abläuft, müssen Sie einen neuen Token anfordern, indem Sie den OAuth2-Prozess erneut durchlaufen.
+*   Der Bearer Token hat eine begrenzte Gültigkeit, die in der Antwort des Token-Endpunkts (`expires_in`) angegeben ist (i.d.R. ein Tag). Sobald der Token abläuft, müssen Sie einen neuen Token anfordern, indem Sie den OAuth2-Prozess erneut durchlaufen.
 *   Die API unterstützt aktuell keine Token-Erneuerung (Refresh Token). Sie müssen einen neuen Token anfordern, sobald der alte abgelaufen ist.
 
 ## Best Practices zur Token-Sicherheit
