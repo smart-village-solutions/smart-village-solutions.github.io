@@ -52,5 +52,6 @@ Hier eine Übersicht der wichtigsten HTTP-Fehlercodes und ihrer Bedeutung:
 | 401         | Unauthorized – Authentifizierung fehlgeschlagen |
 | 403         | Forbidden – Zugriff verweigert    |
 | 500         | Internal Server Error – Problem auf Serverseite |
+| 503         | ??? |
 
 Durch eine saubere Implementierung von Fehlerbehandlungen stellen Sie sicher, dass Ihre Anwendung auch unter ungünstigen Bedingungen stabil bleibt.
